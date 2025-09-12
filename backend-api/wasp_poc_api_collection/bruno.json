@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "wasp_poc_api_collection",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
