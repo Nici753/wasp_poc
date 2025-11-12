@@ -11,8 +11,7 @@ function App() {
   const fetchFromBackend = async () => {
     setLoading(true);
     try {
-      // Passe die URL an dein NestJS Backend an (z.B. localhost:3001)
-      const res = await fetch('http://localhost:3000', {
+      const res = await fetch('http://localhost/api', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -27,7 +26,7 @@ function App() {
       setResponse(data);
     } catch (error) {
       console.error('Error fetching from backend:', error);
-      setResponse(`Error: ${error.message}`);
+      setResponse(`Error: ${error instanceof Error ? error.message : 'Unknown error'}`);
     } finally {
       setLoading(false);
     }
