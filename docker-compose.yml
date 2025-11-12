@@ -1,0 +1,24 @@
+# Docker for development
+services:
+  backend:
+    build:
+      context: backend-api
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend-api:/app
+  frontend:
+    build:
+      context: frontend-react
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend-react:/app
+  nginx:
+    build:
+      context: nginx
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
